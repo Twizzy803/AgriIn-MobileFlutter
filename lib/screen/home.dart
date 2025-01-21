@@ -1,34 +1,34 @@
 import 'package:flutter/material.dart';
 // import 'package:image_picker/image_picker.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: const Color(0xff283739),
+        backgroundColor: const Color(0xFFFFE3E3),
         appBar: AppBar(
-          title: const Text("AGRICure"),
-          centerTitle: true,
-          backgroundColor: const Color(0xFF283739),
-          titleTextStyle: const TextStyle(
-            color: Color(0xffA9C52F),
-            fontFamily: "Poppins",
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-          ),
-        ),
-        body: Column(
+            backgroundColor: Color(0xFF789DBC),
+            toolbarHeight: 80,
+            title: Row(
+              children: [
+                Expanded(
+                    child: Image.asset(
+                  "assets/image/title.png",
+                ))
+              ],
+            )),
+        body: ListView(
           children: [
             Container(
               height: 326,
               color: Colors.amber,
             ),
             Container(
-              height: 415,
+              height: 400,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(30)),
                 color: Color(0xffF5F5F5),
@@ -66,11 +66,14 @@ class Home extends StatelessWidget {
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   textStyle: TextStyle(
+                                      fontFamily: "Poppins",
                                       fontWeight: FontWeight.bold,
                                       fontSize: 18),
-                                  foregroundColor: Colors.white,
-                                  backgroundColor: Color(0xff283739),
+                                  foregroundColor: Color(0xFF16423C),
+                                  backgroundColor: Color(0xff789DBC),
                                   fixedSize: Size(320, 50),
+                                  elevation: 5,
+                                  shadowColor: Colors.black,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10))),
                               onPressed: () async {},
@@ -81,11 +84,14 @@ class Home extends StatelessWidget {
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   textStyle: TextStyle(
+                                      fontFamily: "Poppins",
                                       fontWeight: FontWeight.bold,
                                       fontSize: 18),
-                                  foregroundColor: Colors.white,
-                                  backgroundColor: Color(0xff283739),
+                                  foregroundColor: Color(0xFF16423C),
+                                  backgroundColor: Color(0xff789DBC),
                                   fixedSize: Size(320, 50),
+                                  elevation: 5,
+                                  shadowColor: Colors.black,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10))),
                               onPressed: () {},
