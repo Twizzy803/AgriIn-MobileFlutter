@@ -1,8 +1,23 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-// import 'package:image_picker/image_picker.dart';
+import 'package:agricure/utils/imagePacker-controller.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  File? filePath;
+  final ImagePickerController _imagePickerController = ImagePickerController();
+
+  void _onImagePacker(File? pickedFile) {
+    setState(() {
+      filePath = pickedFile;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +41,9 @@ class HomeScreen extends StatelessWidget {
             Container(
               height: 326,
               color: Colors.amber,
+              child: filePath != null
+                  ? Image.file(filePath!)
+                  : Center(child: Text("Tidak Ada Gambar")),
             ),
             Container(
               height: 400,
@@ -76,8 +94,11 @@ class HomeScreen extends StatelessWidget {
                                   shadowColor: Colors.black,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10))),
-                              onPressed: () async {},
-                              child: Text("Take Foto")),
+                              onPressed: () async {
+                                await _imagePickerController
+                                    .pickImageCamera(_onImagePacker);
+                              },
+                              child: Text("Kamera")),
                           SizedBox(
                             height: 20,
                           ),
@@ -94,8 +115,11 @@ class HomeScreen extends StatelessWidget {
                                   shadowColor: Colors.black,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10))),
-                              onPressed: () {},
-                              child: Text("Detection"))
+                              onPressed: () async {
+                                await _imagePickerController
+                                    .pickImageGallery(_onImagePacker);
+                              },
+                              child: Text("Galeri"))
                         ]),
                   )
                 ],
