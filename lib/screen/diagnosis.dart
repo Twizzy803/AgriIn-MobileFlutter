@@ -2,14 +2,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:agricure/utils/imagePacker-controller.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class DiagnosisScreen extends StatefulWidget {
+  const DiagnosisScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<DiagnosisScreen> createState() => _DiagnosisScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _DiagnosisScreenState extends State<DiagnosisScreen> {
   File? filePath;
   final ImagePickerController _imagePickerController = ImagePickerController();
 
@@ -24,18 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: const Color(0xFFFFE3E3),
-        appBar: AppBar(
-            backgroundColor: Color(0xFF789DBC),
-            toolbarHeight: 80,
-            title: Row(
-              children: [
-                Expanded(
-                    child: Image.asset(
-                  "assets/image/title.png",
-                ))
-              ],
-            )),
         body: ListView(
           children: [
             Container(
@@ -46,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   : Center(child: Text("Tidak Ada Gambar")),
             ),
             Container(
-              height: 400,
+              // height: 400,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(30)),
                 color: Color(0xffF5F5F5),
