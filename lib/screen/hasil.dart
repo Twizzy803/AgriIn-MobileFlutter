@@ -26,7 +26,7 @@ class _HasilScreenState extends State<HasilScreen> {
   // Memuat model prediksi
   Future<void> _loadModel() async {
     String? res = await Tflite.loadModel(
-      model: "assets/model/model15.tflite",
+      model: "assets/model/model30.tflite",
       labels: "assets/model/labels.txt",
       numThreads: 1,
       isAsset: true,

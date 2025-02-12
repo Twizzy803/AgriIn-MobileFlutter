@@ -35,7 +35,7 @@ flutter:
     - assets/image/logosplash.png
     - assets/image/about-icon.png
     - assets/image/diagnosis-icon.png
-    - assets/model/model15.tflite
+    - assets/model/model30.tflite
     - assets/model/labels.txt
     - assets/ICON_APPS.png
 
