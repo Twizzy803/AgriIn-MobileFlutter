@@ -1,0 +1,79 @@
+import 'package:AgriIn/main.dart';
+import 'package:flutter/material.dart';
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => MainScreen()));
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Color(0xff789DBC),
+        appBar: AppBar(
+          title: RichText(
+              text: TextSpan(
+                  text: "Hallo",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Poppins",
+                      fontSize: 24,
+                      color: Color(0xffFFE3E3)),
+                  children: <TextSpan>[
+                TextSpan(
+                    text: "Teman",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Poppins",
+                        fontSize: 24,
+                        color: Color(0xFF16423C)))
+              ])),
+          foregroundColor: Color(0xffFFE3E3),
+          backgroundColor: Color(0xff789DBC),
+          centerTitle: true,
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Center(
+              child: Image.asset(
+                'assets/image/logosplash.png',
+                width: 650,
+                height: 650,
+              ),
+            ),
+            Spacer(),
+            Text(
+              "Ayo kita rawat menjadi unggulan",
+              style: TextStyle(
+                  fontFamily: "Poppins",
+                  color: Color(0xffFFE3E3),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
+            ),
+            Text(
+              "dan Menjadi petani sukses",
+              style: TextStyle(
+                  fontFamily: "Poppins",
+                  color: Color(0xffFFE3E3),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
+            )
+          ],
+        ));
+  }
+}
