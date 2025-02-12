@@ -1,4 +1,4 @@
-name: agricure
+name: AgriIn
 description: "A new Flutter project."
 publish_to: "none"
 version: 0.1.0
@@ -10,7 +10,11 @@ dependencies:
   flutter:
     sdk: flutter
   device_preview: ^1.2.0
-  image_picker: ^1.1.2
+  image_picker: ^1.0.4
+  camera: ^0.10.5+5
+  path_provider: ^2.1.1
+  permission_handler: ^11.0.1
+  tflite_v2: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -21,6 +25,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/image/title.png
+    - assets/image/logosplash.png
     - assets/image/about-icon.png
     - assets/image/diagnosis-icon.png
 

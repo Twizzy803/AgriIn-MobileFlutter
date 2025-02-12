@@ -1,11 +1,12 @@
-import 'package:agricure/screen/about.dart';
-import 'package:agricure/screen/diagnosis.dart';
+import 'package:AgriIn/screen/about.dart';
+import 'package:AgriIn/screen/diagnosis.dart';
 import 'package:flutter/material.dart';
-import 'package:device_preview/device_preview.dart';
+import 'package:AgriIn/screen/splashscreen.dart';
+// import 'package:device_preview/device_preview.dart';
 
 void main() {
-  // runApp(MyApp());
-  runApp(DevicePreview(builder: (context) => MyApp()));
+  runApp(MyApp());
+  // runApp(DevicePreview(builder: (context) => MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,10 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MainScreen(),
+      home: const SplashScreen(),
     );
   }
 }
+
+// MainScreen / IndexScreen
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

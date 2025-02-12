@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:agricure/utils/imagePacker-controller.dart';
+import 'package:AgriIn/utils/imagePacker-controller.dart';
 
 class DiagnosisScreen extends StatefulWidget {
   const DiagnosisScreen({super.key});
@@ -24,17 +24,23 @@ class _DiagnosisScreenState extends State<DiagnosisScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: ListView(
+        backgroundColor: Color.fromARGB(60, 0, 0, 0),
+        body: Column(
           children: [
             Container(
-              height: 326,
-              color: Colors.amber,
+              height: 325,
+              color: const Color.fromARGB(60, 0, 0, 0),
               child: filePath != null
                   ? Image.file(filePath!)
-                  : Center(child: Text("Tidak Ada Gambar")),
+                  : Center(
+                      child: Icon(
+                        Icons.wallpaper,
+                        size: 150,
+                      ),
+                    ),
             ),
+            Expanded(child:
             Container(
-              // height: 400,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(30)),
                 color: Color(0xffF5F5F5),
@@ -112,7 +118,7 @@ class _DiagnosisScreenState extends State<DiagnosisScreen> {
                   )
                 ],
               ),
-            ),
+            ),)
           ],
         ),
       ),
