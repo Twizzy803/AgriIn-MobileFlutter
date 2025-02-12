@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  device_preview: ^1.2.0
   image_picker: ^1.0.4
   camera: ^0.10.5+5
   path_provider: ^2.1.1
@@ -28,6 +27,8 @@ flutter:
     - assets/image/logosplash.png
     - assets/image/about-icon.png
     - assets/image/diagnosis-icon.png
+    - assets/model/model15.tflite
+    - assets/model/labels.txt
 
 fonts:
   - family: Poppins

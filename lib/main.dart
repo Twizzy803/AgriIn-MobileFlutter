@@ -2,7 +2,6 @@ import 'package:AgriIn/screen/about.dart';
 import 'package:AgriIn/screen/diagnosis.dart';
 import 'package:flutter/material.dart';
 import 'package:AgriIn/screen/splashscreen.dart';
-// import 'package:device_preview/device_preview.dart';
 
 void main() {
   runApp(MyApp());
