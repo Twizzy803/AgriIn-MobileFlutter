@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xff789DBC),
+        backgroundColor: Color(0xff65B741),
         appBar: AppBar(
           title: RichText(
               text: TextSpan(
@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         color: Color(0xFF16423C)))
               ])),
           foregroundColor: Color(0xffFFE3E3),
-          backgroundColor: Color(0xff789DBC),
+          backgroundColor: Color(0xff65B741),
           centerTitle: true,
         ),
         body: Column(
@@ -65,6 +65,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   fontWeight: FontWeight.bold,
                   fontSize: 15),
             ),
+            SizedBox(height: 5),
             Text(
               "dan Menjadi petani sukses",
               style: TextStyle(
@@ -72,7 +73,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   color: Color(0xffFFE3E3),
                   fontWeight: FontWeight.bold,
                   fontSize: 15),
-            )
+            ),
+            SizedBox(height: 30),
           ],
         ));
   }

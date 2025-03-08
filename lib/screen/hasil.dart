@@ -26,7 +26,7 @@ class _HasilScreenState extends State<HasilScreen> {
   // Memuat model prediksi
   Future<void> _loadModel() async {
     String? res = await Tflite.loadModel(
-      model: "assets/model/model30.tflite",
+      model: "assets/model/model.tflite",
       labels: "assets/model/labels.txt",
       numThreads: 1,
       isAsset: true,
@@ -89,7 +89,7 @@ class _HasilScreenState extends State<HasilScreen> {
 
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF789DBC),
+          backgroundColor: Color(0xFF65B741),
           toolbarHeight: 80,
           leading: IconButton(
             icon: Icon(Icons.arrow_back),

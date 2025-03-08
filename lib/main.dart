@@ -44,7 +44,7 @@ class _MainScreenState extends State<MainScreen> {
               return AlertDialog(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
-                backgroundColor: Color(0xff789DBC),
+                backgroundColor: Color(0xff65B741),
                 title: Text('Perhatian',
                     style: TextStyle(
                       fontFamily: "Poppins",
@@ -64,7 +64,7 @@ class _MainScreenState extends State<MainScreen> {
                       textStyle: TextStyle(
                           fontWeight: FontWeight.bold, fontFamily: "Poppins"),
                       backgroundColor: Colors.white,
-                      foregroundColor: Color(0xff789DBC),
+                      foregroundColor: Color(0xff65B741),
                       elevation: 5,
                       shadowColor: Colors.black,
                       shape: RoundedRectangleBorder(
@@ -77,8 +77,8 @@ class _MainScreenState extends State<MainScreen> {
                     style: ElevatedButton.styleFrom(
                       textStyle: TextStyle(
                           fontWeight: FontWeight.bold, fontFamily: "Poppins"),
-                      backgroundColor: Color(0xff283739),
-                      foregroundColor: Colors.white,
+                      backgroundColor: Color(0xffC1F2B0),
+                      foregroundColor: Color(0xFF283739),
                       elevation: 5,
                       shadowColor: Colors.black,
                       shape: RoundedRectangleBorder(
@@ -98,9 +98,9 @@ class _MainScreenState extends State<MainScreen> {
           }
         },
         child: Scaffold(
-          backgroundColor: const Color(0xFFFFE3E3),
+          backgroundColor: const Color(0xFFFBF6EE),
           appBar: AppBar(
-              backgroundColor: Color(0xFF789DBC),
+              backgroundColor: Color(0xFF65B741),
               toolbarHeight: 80,
               title: Row(
                 children: [
@@ -116,6 +116,8 @@ class _MainScreenState extends State<MainScreen> {
           ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _selectedIndex,
+            selectedItemColor: Color(0xFF65B741),
+            unselectedItemColor: Colors.grey,
             onTap: (index) {
               setState(() {
                 _selectedIndex = index;

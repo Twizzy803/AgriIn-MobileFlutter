@@ -14,6 +14,7 @@ dependencies:
   path_provider: ^2.1.1
   permission_handler: ^11.0.1
   tflite_v2: ^1.0.0
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -35,9 +36,11 @@ flutter:
     - assets/image/logosplash.png
     - assets/image/about-icon.png
     - assets/image/diagnosis-icon.png
-    - assets/model/model30.tflite
+    - assets/model/model.tflite
     - assets/model/labels.txt
     - assets/ICON_APPS.png
+    - assets/image/slider1.jpeg
+    - assets/image/slider2.jpeg
 
 fonts:
   - family: Poppins

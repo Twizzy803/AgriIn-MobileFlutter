@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:AgriIn/screen/hasil.dart';
 import 'package:flutter/material.dart';
 import 'package:AgriIn/utils/imagePacker-controller.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class DiagnosisScreen extends StatefulWidget {
   const DiagnosisScreen({super.key});
@@ -20,59 +21,79 @@ class _DiagnosisScreenState extends State<DiagnosisScreen> {
     });
   }
 
+  final List<String> imgList = [
+    'assets/image/slider1.jpeg',
+    'assets/image/slider2.jpeg'
+  ];
+
   @override
   Widget build(BuildContext context) {
+
+    //Mengambil ukuran layar
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color.fromARGB(60, 0, 0, 0),
+        backgroundColor: Colors.white,
         body: Column(
           children: [
-            Container(
-              height: 325,
-              color: const Color.fromARGB(60, 0, 0, 0),
-              child: filePath != null
-                  ? Image.file(filePath!)
-                  : Center(
-                      child: Icon(
-                        Icons.wallpaper,
-                        size: 150,
-                      ),
-                    ),
+            SizedBox(height: 10),
+            CarouselSlider(options: CarouselOptions(
+              height: screenHeight * 0.3, // Sesuaikan tinggi slider
+              autoPlay: true, // Auto-slide gambar
+              enlargeCenterPage: true, // Memperbesar gambar tengah
+              aspectRatio: 16 / 9, // Menjaga aspek rasio
+              viewportFraction: 0.9,),
+            items: imgList.map((item) {
+              return ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  item,
+                  fit: BoxFit.cover,
+                  width: screenWidth * 0.9, // Sesuaikan lebar
+                  ),
+                );
+              }).toList(),
             ),
+            SizedBox(height: 10),
             Expanded(
               child: Container(
                 decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(30)),
-                  color: Color(0xffF5F5F5),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50)),
+                  color: Color(0xff65B741),
                 ),
                 child: Column(
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.only(left: 32.0, top: 32.0),
+                     Padding(
+                      padding: EdgeInsets.only(left: screenWidth * 0.08, top:  screenHeight * 0.04),
                       child: Row(
                         children: [
                           Text(
-                            "Hai",
+                            "Gunakan Dengan",
                             style: TextStyle(
-                                color: Color(0xffA9C52F),
+                                color: Color(0xff16423C),
                                 fontFamily: "Poppins",
-                                fontSize: 24,
+                                fontSize: screenWidth * 0.06,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            ", Teman",
+                            " Bijak",
                             style: TextStyle(
-                                color: Color(0xff283739),
+                                color: Colors.white,
                                 fontFamily: "Poppins",
-                                fontSize: 24,
+                                fontSize: screenWidth * 0.06,
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: screenHeight * 0.06,
+                    ),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 32.0, top: 32.0),
+                      padding: EdgeInsets.only(bottom: screenHeight * 0.05, top: screenHeight * 0.02),
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -81,10 +102,10 @@ class _DiagnosisScreenState extends State<DiagnosisScreen> {
                                     textStyle: TextStyle(
                                         fontFamily: "Poppins",
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 18),
+                                        fontSize: screenWidth * 0.05),
                                     foregroundColor: Color(0xFF16423C),
-                                    backgroundColor: Color(0xff789DBC),
-                                    fixedSize: Size(320, 50),
+                                    backgroundColor: Color(0xffC1F2B0),
+                                    fixedSize: Size(screenWidth * 0.85, 60),
                                     elevation: 5,
                                     shadowColor: Colors.black,
                                     shape: RoundedRectangleBorder(
@@ -104,17 +125,17 @@ class _DiagnosisScreenState extends State<DiagnosisScreen> {
                                 },
                                 child: Text("Kamera")),
                             SizedBox(
-                              height: 20,
+                              height: screenHeight * 0.05,
                             ),
                             ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     textStyle: TextStyle(
                                         fontFamily: "Poppins",
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 18),
+                                        fontSize: screenWidth * 0.05),
                                     foregroundColor: Color(0xFF16423C),
-                                    backgroundColor: Color(0xff789DBC),
-                                    fixedSize: Size(320, 50),
+                                    backgroundColor: Color(0xffC1F2B0),
+                                    fixedSize: Size(screenWidth * 0.85, 60),
                                     elevation: 5,
                                     shadowColor: Colors.black,
                                     shape: RoundedRectangleBorder(

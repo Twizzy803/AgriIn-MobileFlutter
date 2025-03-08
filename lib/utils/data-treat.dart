@@ -14,10 +14,10 @@ class DataTreat {
   // CF dari pakar untuk setiap penyakit (harus sesuai dengan label model)
   final List<double> cfValues = [
     0.8, // CF untuk "bercak ungu"
-    0.7, // CF untuk "hawar"
-    0.9, // CF untuk "lalat dan ulat"
-    0.85, // CF untuk "moler"
+    0.7, // CF untuk "moler"
     0.0, // CF untuk "daun sehat" (karena sehat tidak perlu diagnosa)
+    0.85, // CF untuk "hawar"
+    0.9, // CF untuk "lalat dan ulat"
   ];
 
   // Data perawatan berdasarkan indeks penyakit
@@ -28,21 +28,21 @@ class DataTreat {
       "Pastikan drainase lahan baik."
     ],
     [
-      "Gunakan antibiotik nabati seperti streptomisin.",
-      "Lakukan sanitasi kebun secara rutin.",
-      "Gunakan varietas tahan penyakit."
-    ],
-    [
-      "Gunakan insektisida biologis berbasis neem oil.",
-      "Lakukan pemangkasan daun yang terserang.",
-      "Pasang perangkap kuning untuk lalat."
-    ],
-    [
       "Gunakan fungisida sistemik berbasis benomil.",
       "Perbaiki drainase lahan agar tidak tergenang air.",
       "Lakukan pergiliran tanaman."
     ],
     ["Tanaman dalam kondisi sehat, tidak perlu perawatan tambahan."],
+    [
+    "Gunakan antibiotik nabati seperti streptomisin.",
+    "Lakukan sanitasi kebun secara rutin.",
+    "Gunakan varietas tahan penyakit."
+    ],
+    [
+      "Gunakan insektisida biologis berbasis neem oil.",
+      "Lakukan pemangkasan daun yang terserang.",
+      "Pasang perangkap kuning untuk lalat."
+    ]
   ];
 }
 
