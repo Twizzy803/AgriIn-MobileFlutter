@@ -34,13 +34,15 @@ flutter:
   assets:
     - assets/image/title.png
     - assets/image/logosplash.png
-    - assets/image/about-icon.png
-    - assets/image/diagnosis-icon.png
     - assets/model/model.tflite
     - assets/model/labels.txt
     - assets/ICON_APPS.png
     - assets/image/slider1.jpeg
     - assets/image/slider2.jpeg
+    - assets/image/edu-bercakungu.jpg
+    - assets/image/edu-hawar.jpg
+    - assets/image/edu-lalat.png
+    - assets/image/edu-moler.jpg
 
 fonts:
   - family: Poppins

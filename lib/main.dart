@@ -1,5 +1,6 @@
 import 'package:AgriIn/screen/about.dart';
 import 'package:AgriIn/screen/diagnosis.dart';
+import 'package:AgriIn/screen/edukasi.dart';
 import 'package:flutter/material.dart';
 import 'package:AgriIn/screen/splashscreen.dart';
 
@@ -32,7 +33,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [const DiagnosisScreen(), const AboutScreen()];
+  final List<Widget> _pages = [const EdukasiScreen() ,const DiagnosisScreen(), const AboutScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -124,6 +125,8 @@ class _MainScreenState extends State<MainScreen> {
               });
             },
             items: [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.menu_book_outlined), label: 'Edukasi'),
               BottomNavigationBarItem(
                   icon: Icon(Icons.radar_outlined), label: 'Diagnosis'),
               BottomNavigationBarItem(
