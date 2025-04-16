@@ -28,7 +28,6 @@ class _DiagnosisScreenState extends State<DiagnosisScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     //Mengambil ukuran layar
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
@@ -40,19 +39,25 @@ class _DiagnosisScreenState extends State<DiagnosisScreen> {
         body: Column(
           children: [
             SizedBox(height: 10),
-            CarouselSlider(options: CarouselOptions(
-              height: screenHeight * 0.3, // Sesuaikan tinggi slider
-              autoPlay: true, // Auto-slide gambar
-              enlargeCenterPage: true, // Memperbesar gambar tengah
-              aspectRatio: 16 / 9, // Menjaga aspek rasio
-              viewportFraction: 0.9,),
-            items: imgList.map((item) {
-              return ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.asset(
-                  item,
-                  fit: BoxFit.cover,
-                  width: screenWidth * 0.9, // Sesuaikan lebar
+            CarouselSlider(
+              options: CarouselOptions(
+                height: screenHeight * 0.3,
+                // Sesuaikan tinggi slider
+                autoPlay: true,
+                // Auto-slide gambar
+                enlargeCenterPage: true,
+                // Memperbesar gambar tengah
+                aspectRatio: 16 / 9,
+                // Menjaga aspek rasio
+                viewportFraction: 0.9,
+              ),
+              items: imgList.map((item) {
+                return ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image.asset(
+                    item,
+                    fit: BoxFit.cover,
+                    width: screenWidth * 0.9, // Sesuaikan lebar
                   ),
                 );
               }).toList(),
@@ -61,13 +66,16 @@ class _DiagnosisScreenState extends State<DiagnosisScreen> {
             Expanded(
               child: Container(
                 decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50)),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50),
+                      topRight: Radius.circular(50)),
                   color: Color(0xff65B741),
                 ),
                 child: Column(
                   children: [
-                     Padding(
-                      padding: EdgeInsets.only(left: screenWidth * 0.08, top:  screenHeight * 0.04),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: screenWidth * 0.08, top: screenHeight * 0.04),
                       child: Row(
                         children: [
                           Text(
@@ -93,7 +101,9 @@ class _DiagnosisScreenState extends State<DiagnosisScreen> {
                       height: screenHeight * 0.06,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(bottom: screenHeight * 0.05, top: screenHeight * 0.02),
+                      padding: EdgeInsets.only(
+                          bottom: screenHeight * 0.05,
+                          top: screenHeight * 0.02),
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

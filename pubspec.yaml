@@ -23,11 +23,11 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
 
 flutter_launcher_icons:
-   android: true
-   ios: true
-   image_path: "assets/ICON_APPS.png"
-   adaptive_icon_background: "#789DBC"  # Warna latar belakang untuk Android
-   adaptive_icon_foreground: "assets/ICON_APPS.png"
+  android: true
+  ios: true
+  image_path: "assets/ICON_APPS.png"
+  adaptive_icon_background: "#789DBC"  # Warna latar belakang untuk Android
+  adaptive_icon_foreground: "assets/ICON_APPS.png"
 
 flutter:
   uses-material-design: true
@@ -39,13 +39,16 @@ flutter:
     - assets/ICON_APPS.png
     - assets/image/slider1.jpeg
     - assets/image/slider2.jpeg
-    - assets/image/edu-bercakungu.jpg
-    - assets/image/edu-hawar.jpg
-    - assets/image/edu-lalat.png
-    - assets/image/edu-moler.jpg
-
-fonts:
-  - family: Poppins
-    fonts:
-      - asset: assets/fonts/Poppins-Regular.ttf
-      - asset: assets/fonts/Poppins-Bold.ttf
+    - assets/image/edu_bercakungu.jpg
+    - assets/image/edu_hawar.jpg
+    - assets/image/edu_lalat.png
+    - assets/image/edu_moler.jpg
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
+    - family: Comic
+      fonts:
+        - asset: assets/fonts/ComicNeue_Regular.ttf
+        - asset: assets/fonts/ComicNeue-Bold.ttf
