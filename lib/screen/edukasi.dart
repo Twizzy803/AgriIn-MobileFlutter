@@ -21,7 +21,7 @@ class EdukasiScreen extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xffC1F2B0),
-                    foregroundColor: Colors.black,
+                    foregroundColor: Color(0xff16423C),
                     fixedSize: Size(screenWidth * 0.45, 250),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10))),
@@ -56,7 +56,7 @@ class EdukasiScreen extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xffC1F2B0),
-                    foregroundColor: Colors.black,
+                    foregroundColor: Color(0xff16423C),
                     fixedSize: Size(screenWidth * 0.45, 250),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10))),
@@ -98,7 +98,7 @@ class EdukasiScreen extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xffC1F2B0),
-                    foregroundColor: Colors.black,
+                    foregroundColor: Color(0xff16423C),
                     fixedSize: Size(screenWidth * 0.45, 250),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10))),
@@ -133,7 +133,7 @@ class EdukasiScreen extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xffC1F2B0),
-                    foregroundColor: Colors.black,
+                    foregroundColor: Color(0xff16423C),
                     fixedSize: Size(screenWidth * 0.45, 250),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10))),
