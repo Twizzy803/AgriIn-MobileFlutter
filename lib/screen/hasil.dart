@@ -88,11 +88,12 @@ class _HasilScreenState extends State<HasilScreen> {
     }
 
     return Scaffold(
+      backgroundColor: Color(0xffC1F2B0),
         appBar: AppBar(
           backgroundColor: Color(0xFF65B741),
           toolbarHeight: 80,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: Icon(Icons.arrow_back, color: Color(0xffC1F2B0),),
             onPressed: () {
               Navigator.pop(context);
             },
@@ -150,6 +151,11 @@ class _HasilScreenState extends State<HasilScreen> {
                                 Text(
                                   "Certainty Factor: ${((_hasilPred != null && _hasilPred!.isNotEmpty) ? (_hasilPred![0]['cfGabungan'] * 100).toStringAsFixed(2) : '0')}%",
                                   style: TextStyle(fontSize: 18),
+                                ),
+                                SizedBox(height: 20),
+                                Text(
+                                  "PERHATIKAN CARA PENGGUNAAN KHUSUS PENGOBATAN",
+                                  style: TextStyle(fontSize: 18, color: Colors.red),
                                 ),
                                 SizedBox(height: 20),
                                 Text(

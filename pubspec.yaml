@@ -36,7 +36,7 @@ flutter:
     - assets/image/logosplash.png
     - assets/model/model.tflite
     - assets/model/labels.txt
-    - assets/ICON_APPS.png
+    - assets/ICON_APPS2.png
     - assets/image/slider1.jpeg
     - assets/image/slider2.jpeg
     - assets/image/edu_bercakungu.jpg
@@ -52,3 +52,6 @@ flutter:
       fonts:
         - asset: assets/fonts/ComicNeue_Regular.ttf
         - asset: assets/fonts/ComicNeue-Bold.ttf
+    - family: Titan
+      fonts:
+        - asset: assets/fonts/TitanOne-Regular.ttf

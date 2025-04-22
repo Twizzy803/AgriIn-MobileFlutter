@@ -70,7 +70,7 @@ class _SplashScreenState extends State<SplashScreen> {
               "dan Menjadi petani sukses",
               style: TextStyle(
                   fontFamily: "Poppins",
-                  color: Color(0xffFFE3E3),
+                  color: Color(0xff16423C),
                   fontWeight: FontWeight.bold,
                   fontSize: 15),
             ),

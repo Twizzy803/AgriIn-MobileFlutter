@@ -35,7 +35,7 @@ class _DiagnosisScreenState extends State<DiagnosisScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xffC1F2B0),
         body: Column(
           children: [
             SizedBox(height: 10),

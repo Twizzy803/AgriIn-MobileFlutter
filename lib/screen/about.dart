@@ -16,6 +16,7 @@ class AboutScreen extends StatelessWidget {
         .height;
 
     return Scaffold(
+      backgroundColor: Color(0xffC1F2B0),
         body: Column(children: [
           Padding(
             padding: EdgeInsets.symmetric(

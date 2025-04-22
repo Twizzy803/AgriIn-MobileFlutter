@@ -31,7 +31,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   final List<Widget> _pages = [
     const EdukasiScreen(),
@@ -103,7 +103,7 @@ class _MainScreenState extends State<MainScreen> {
           }
         },
         child: Scaffold(
-          backgroundColor: const Color(0xFFFBF6EE),
+          // backgroundColor: const Color(0xFFFBF6EE),
           appBar: AppBar(
               backgroundColor: Color(0xFF65B741),
               toolbarHeight: 80,
@@ -122,7 +122,8 @@ class _MainScreenState extends State<MainScreen> {
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _selectedIndex,
             selectedItemColor: Color(0xFF65B741),
-            unselectedItemColor: Colors.grey,
+            unselectedItemColor: Color(0xff888787),
+            backgroundColor: Color(0xffC1F2B0),
             onTap: (index) {
               setState(() {
                 _selectedIndex = index;
