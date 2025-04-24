@@ -87,95 +87,175 @@ class _HasilScreenState extends State<HasilScreen> {
       cfGabungan = _hasilPred![0]['cfGabungan'] ?? 0.0;
     }
 
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      backgroundColor: Color(0xffC1F2B0),
+        backgroundColor: Color(0xffC1F2B0),
         appBar: AppBar(
           backgroundColor: Color(0xFF65B741),
           toolbarHeight: 80,
+          centerTitle: true,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Color(0xffC1F2B0),),
+            icon: Icon(
+              Icons.arrow_back,
+              color: Color(0xffC1F2B0),
+            ),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
-          title: null,
-          flexibleSpace: Align(
-            alignment: Alignment.center,
-            child: Padding(
-              padding: EdgeInsets.only(top: 40),
-              child: Image.asset(
-                "assets/image/title.png",
-                height: 130,
-              ),
-            ),
+          title: Text(
+            "Hasil",
+            style: TextStyle(
+                fontFamily: 'Titan',
+                color: Color(0xffC1F2B0),
+                fontSize: screenWidth * 0.07),
           ),
         ),
         body: _hasilPred == null
             ? Center(child: CircularProgressIndicator())
             : ListView(children: [
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Hasil Prediksi:", style: TextStyle(fontSize: 18)),
-                      SizedBox(height: 10),
-                      Container(
-                        width: double.infinity,
-                        height: 300,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: Colors.grey),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Image.file(
-                            widget.file!,
-                            fit: BoxFit.cover,
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 10),
+                        Container(
+                          width: double.infinity,
+                          height: 300,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(color: Colors.grey),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Image.file(
+                              widget.file!,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: 20),
-                      _hasilPred!.isNotEmpty
-                          ? Column(
+                        SizedBox(height: 20),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Color(0xffFF6363),
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: screenWidth * 0.025,
+                                vertical: screenHeight * 0.015),
+                            child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("Label: ${_hasilPred![0]['label']}",
-                                    style: TextStyle(fontSize: 18)),
-                                SizedBox(height: 10),
                                 Text(
-                                  "Confidence: ${(confidence * 100).toStringAsFixed(2)}%",
-                                  style: TextStyle(fontSize: 18),
-                                ),
-                                SizedBox(height: 20),
-                                Text(
-                                  "Certainty Factor: ${((_hasilPred != null && _hasilPred!.isNotEmpty) ? (_hasilPred![0]['cfGabungan'] * 100).toStringAsFixed(2) : '0')}%",
-                                  style: TextStyle(fontSize: 18),
-                                ),
-                                SizedBox(height: 20),
-                                Text(
-                                  "PERHATIKAN CARA PENGGUNAAN KHUSUS PENGOBATAN",
-                                  style: TextStyle(fontSize: 18, color: Colors.red),
-                                ),
-                                SizedBox(height: 20),
-                                Text(
-                                  "Rekomendasi Perawatan: ",
-                                  style: TextStyle(fontSize: 18),
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: dt
-                                      .treatment[_hasilPred![0]['index']]
-                                      .map((treatment) => Text("- $treatment",
-                                          style: TextStyle(fontSize: 16)))
-                                      .toList(),
+                                  "PERHATIKAN PETUNJUK PENGGUNAAN KHUSUS PENGOBATAN !!!",
+                                  style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: screenWidth * 0.033,
+                                      color: Colors.white),
+                                  textAlign: TextAlign.center,
                                 ),
                               ],
-                            )
-                          : Text("Tidak ada hasil prediksi."),
-                    ],
-                  ),
-                ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.015,
+                        ),
+                        _hasilPred!.isNotEmpty
+                            ? Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                    Container(
+                                        decoration: BoxDecoration(
+                                            color: Color(0xff65B741),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
+                                        child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: screenWidth * 0.025,
+                                                vertical: screenHeight * 0.015),
+                                            child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "Jenis Penyakit: ${_hasilPred![0]['label']}",
+                                                    style: TextStyle(
+                                                        fontSize:
+                                                            screenWidth * 0.035,
+                                                        fontFamily: 'Poppins',
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.white),
+                                                  ),
+                                                  // Text(
+                                                  //   "Confidence: ${(confidence * 100).toStringAsFixed(2)}%",
+                                                  //   style: TextStyle(fontSize: 18),
+                                                  // ),
+                                                  Text(
+                                                    "Persentase Kerusakan: ${((_hasilPred != null && _hasilPred!.isNotEmpty) ? (_hasilPred![0]['cfGabungan'] * 100).toStringAsFixed(2) : '0')}%",
+                                                    style: TextStyle(
+                                                        fontSize:
+                                                            screenWidth * 0.035,
+                                                        fontFamily: 'Poppins',
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.white),
+                                                  )
+                                                ]))),
+                                    SizedBox(
+                                      height: screenHeight * 0.015,
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Color(0xff65B741),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
+                                        child: Column(
+                                          children: [
+                                            Text(
+                                              "Rekomendasi Perawatan: ",
+                                              style: TextStyle(
+                                                  fontSize: screenWidth * 0.035,
+                                                  fontFamily: 'Poppins',
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white),
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: dt.treatment[
+                                                      _hasilPred![0]['index']]
+                                                  .map((treatment) => Text(
+                                                        "• $treatment",
+                                                        style: TextStyle(
+                                                            fontSize:
+                                                                screenWidth *
+                                                                    0.035,
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color:
+                                                                Colors.white),
+                                                        textAlign:
+                                                            TextAlign.justify,
+                                                      ))
+                                                  .toList(),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ])
+                            : Text("Tidak ada hasil prediksi.")
+                      ],
+                    )),
               ]));
   }
 }

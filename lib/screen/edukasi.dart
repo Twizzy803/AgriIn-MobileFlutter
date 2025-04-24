@@ -94,7 +94,7 @@ class EdukasiScreen extends StatelessWidget {
                                 ),
                               )),
                           SizedBox(
-                            height: 15,
+                            height: screenHeight * 0.01,
                           ),
                           Text(
                             "Hawar",
@@ -188,7 +188,7 @@ class EdukasiScreen extends StatelessWidget {
                                 ),
                               )),
                           SizedBox(
-                            height: 15,
+                            height: screenHeight * 0.01,
                           ),
                           Text(
                             "Moler",
