@@ -105,7 +105,7 @@ class bercakunguScreen extends StatelessWidget {
                         ]))),
             // bagian penanganan
             SizedBox(
-              height: screenHeight * 0.04,
+              height: screenHeight * 0.02,
             ),
             Container(
                 decoration: BoxDecoration(
