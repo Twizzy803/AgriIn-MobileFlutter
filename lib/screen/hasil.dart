@@ -1,7 +1,10 @@
 import 'dart:io';
 import 'package:AgriIn/utils/data-treat.dart';
+import 'package:AgriIn/utils/riwayat-model.dart';
 import 'package:flutter/material.dart';
 import 'package:tflite_v2/tflite_v2.dart';
+
+List<RiwayatModel> riwayatList = [];
 
 class HasilScreen extends StatefulWidget {
   final File? file;
@@ -62,6 +65,17 @@ class _HasilScreenState extends State<HasilScreen> {
             'cfGabungan': cfGabungan, // Tambahkan nilai CF gabungan
           };
         }).toList();
+
+        final topPred = _hasilPred![0];
+        print("Path gambar: ${widget.file?.path}");
+        print("Label: ${topPred['label']}");
+        print("Confidence: ${topPred['confidence']}");
+        riwayatList.add(RiwayatModel(
+            imagePath: widget.file!.path,
+            label: topPred['label'],
+            confidence: topPred['confidence'],
+            cfGabungan: topPred['cfGabungan'],
+            tanggal: DateTime.now()));
       });
     }
   }
@@ -217,7 +231,8 @@ class _HasilScreenState extends State<HasilScreen> {
                                       ),
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
+                                            horizontal: screenWidth * 0.025,
+                                            vertical: screenHeight * 0.015),
                                         child: Column(
                                           children: [
                                             Text(
