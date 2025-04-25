@@ -17,6 +17,7 @@ class _RiwayatScreenState extends State<RiwayatScreen> {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      backgroundColor: Color(0xffC1F2B0),
       body: riwayatList.isEmpty
           ? Center(
               child: Text("Belum ada riwayat diagnosis"),
