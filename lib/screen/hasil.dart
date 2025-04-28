@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:AgriIn/utils/data-treat.dart';
 import 'package:AgriIn/utils/riwayat-model.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:tflite_v2/tflite_v2.dart';
 
 List<RiwayatModel> riwayatList = [];
@@ -67,11 +68,8 @@ class _HasilScreenState extends State<HasilScreen> {
         }).toList();
 
         final topPred = _hasilPred![0];
-        print("Path gambar: ${widget.file?.path}");
-        print("Label: ${topPred['label']}");
-        print("Confidence: ${topPred['confidence']}");
-        riwayatList.add(RiwayatModel(
-            imagePath: widget.file!.path,
+        final box = Hive.box<RiwayatModel>('riwayatBox');
+        box.add(RiwayatModel(imagePath: widget.file!.path,
             label: topPred['label'],
             confidence: topPred['confidence'],
             cfGabungan: topPred['cfGabungan'],
@@ -101,8 +99,14 @@ class _HasilScreenState extends State<HasilScreen> {
       cfGabungan = _hasilPred![0]['cfGabungan'] ?? 0.0;
     }
 
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery
+        .of(context)
+        .size
+        .width;
+    final screenHeight = MediaQuery
+        .of(context)
+        .size
+        .height;
 
     return Scaffold(
         backgroundColor: Color(0xffC1F2B0),
@@ -130,147 +134,152 @@ class _HasilScreenState extends State<HasilScreen> {
         body: _hasilPred == null
             ? Center(child: CircularProgressIndicator())
             : ListView(children: [
-                Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+          Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 10),
+                  Container(
+                    width: double.infinity,
+                    height: 300,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(color: Colors.grey),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: Image.file(
+                        widget.file!,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Color(0xffFF6363),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: screenWidth * 0.025,
+                          vertical: screenHeight * 0.015),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "PERHATIKAN PETUNJUK PENGGUNAAN KHUSUS PENGOBATAN !!!",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: screenWidth * 0.033,
+                                color: Colors.white),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.015,
+                  ),
+                  _hasilPred!.isNotEmpty
+                      ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        SizedBox(height: 10),
                         Container(
-                          width: double.infinity,
-                          height: 300,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: Colors.grey),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(15),
-                            child: Image.file(
-                              widget.file!,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
+                            decoration: BoxDecoration(
+                                color: Color(0xff65B741),
+                                borderRadius:
+                                BorderRadius.circular(10)),
+                            child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: screenWidth * 0.025,
+                                    vertical: screenHeight * 0.015),
+                                child: Column(
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Jenis Penyakit: ${_hasilPred![0]['label']}",
+                                        style: TextStyle(
+                                            fontSize:
+                                            screenWidth * 0.035,
+                                            fontFamily: 'Poppins',
+                                            fontWeight:
+                                            FontWeight.bold,
+                                            color: Colors.white),
+                                      ),
+                                      // Text(
+                                      //   "Confidence: ${(confidence * 100).toStringAsFixed(2)}%",
+                                      //   style: TextStyle(fontSize: 18),
+                                      // ),
+                                      Text(
+                                        "Persentase Kerusakan: ${((_hasilPred !=
+                                            null && _hasilPred!.isNotEmpty)
+                                            ? (_hasilPred![0]['cfGabungan'] *
+                                            100).toStringAsFixed(2)
+                                            : '0')}%",
+                                        style: TextStyle(
+                                            fontSize:
+                                            screenWidth * 0.035,
+                                            fontFamily: 'Poppins',
+                                            fontWeight:
+                                            FontWeight.bold,
+                                            color: Colors.white),
+                                      )
+                                    ]))),
+                        SizedBox(
+                          height: screenHeight * 0.015,
                         ),
-                        SizedBox(height: 20),
                         Container(
                           decoration: BoxDecoration(
-                              color: Color(0xffFF6363),
-                              borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xff65B741),
+                          ),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: screenWidth * 0.025,
                                 vertical: screenHeight * 0.015),
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "PERHATIKAN PETUNJUK PENGGUNAAN KHUSUS PENGOBATAN !!!",
+                                  "Rekomendasi Perawatan: ",
                                   style: TextStyle(
+                                      fontSize: screenWidth * 0.035,
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.bold,
-                                      fontSize: screenWidth * 0.033,
                                       color: Colors.white),
-                                  textAlign: TextAlign.center,
                                 ),
+                                Column(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: dt.treatment[
+                                  _hasilPred![0]['index']]
+                                      .map((treatment) =>
+                                      Text(
+                                        "• $treatment",
+                                        style: TextStyle(
+                                            fontSize:
+                                            screenWidth *
+                                                0.035,
+                                            fontFamily:
+                                            'Poppins',
+                                            color:
+                                            Colors.white),
+                                        textAlign:
+                                        TextAlign.justify,
+                                      ))
+                                      .toList(),
+                                )
                               ],
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: screenHeight * 0.015,
-                        ),
-                        _hasilPred!.isNotEmpty
-                            ? Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                    Container(
-                                        decoration: BoxDecoration(
-                                            color: Color(0xff65B741),
-                                            borderRadius:
-                                                BorderRadius.circular(10)),
-                                        child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: screenWidth * 0.025,
-                                                vertical: screenHeight * 0.015),
-                                            child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    "Jenis Penyakit: ${_hasilPred![0]['label']}",
-                                                    style: TextStyle(
-                                                        fontSize:
-                                                            screenWidth * 0.035,
-                                                        fontFamily: 'Poppins',
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color: Colors.white),
-                                                  ),
-                                                  // Text(
-                                                  //   "Confidence: ${(confidence * 100).toStringAsFixed(2)}%",
-                                                  //   style: TextStyle(fontSize: 18),
-                                                  // ),
-                                                  Text(
-                                                    "Persentase Kerusakan: ${((_hasilPred != null && _hasilPred!.isNotEmpty) ? (_hasilPred![0]['cfGabungan'] * 100).toStringAsFixed(2) : '0')}%",
-                                                    style: TextStyle(
-                                                        fontSize:
-                                                            screenWidth * 0.035,
-                                                        fontFamily: 'Poppins',
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color: Colors.white),
-                                                  )
-                                                ]))),
-                                    SizedBox(
-                                      height: screenHeight * 0.015,
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        color: Color(0xff65B741),
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: screenWidth * 0.025,
-                                            vertical: screenHeight * 0.015),
-                                        child: Column(
-                                          children: [
-                                            Text(
-                                              "Rekomendasi Perawatan: ",
-                                              style: TextStyle(
-                                                  fontSize: screenWidth * 0.035,
-                                                  fontFamily: 'Poppins',
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.white),
-                                            ),
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: dt.treatment[
-                                                      _hasilPred![0]['index']]
-                                                  .map((treatment) => Text(
-                                                        "• $treatment",
-                                                        style: TextStyle(
-                                                            fontSize:
-                                                                screenWidth *
-                                                                    0.035,
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            color:
-                                                                Colors.white),
-                                                        textAlign:
-                                                            TextAlign.justify,
-                                                      ))
-                                                  .toList(),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ])
-                            : Text("Tidak ada hasil prediksi.")
-                      ],
-                    )),
-              ]));
+                      ])
+                      : Text("Tidak ada hasil prediksi.")
+                ],
+              )),
+        ]));
   }
 }

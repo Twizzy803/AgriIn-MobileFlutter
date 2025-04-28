@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:AgriIn/screen/hasil.dart';
 import 'package:AgriIn/utils/riwayat-model.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 class RiwayatScreen extends StatefulWidget {
   const RiwayatScreen({super.key});
@@ -15,6 +16,9 @@ class _RiwayatScreenState extends State<RiwayatScreen> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+    // Membuka Box dari Hive
+    final box = Hive.box<RiwayatModel>('riwayatBox');
+    final riwayatList = box.values.toList();
 
     return Scaffold(
       backgroundColor: Color(0xffC1F2B0),
@@ -143,8 +147,14 @@ class _RiwayatScreenState extends State<RiwayatScreen> {
                           child: Text("Hapus",
                               style: TextStyle(color: Colors.red)),
                           onPressed: () {
+                            // Menghapus semua data dari box Hive
+                            final box = Hive.box<RiwayatModel>('riwayatBox');
+                            box.clear(); // Menghapus semua data dari Hive
+
+                            // Memperbarui daftar dan UI
                             setState(() {
-                              riwayatList.clear();
+                              riwayatList
+                                  .clear(); // Menghapus data dari riwayatList
                             });
                             Navigator.of(context).pop();
                           },

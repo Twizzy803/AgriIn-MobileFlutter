@@ -1,5 +1,7 @@
 import 'package:AgriIn/main.dart';
+import 'package:AgriIn/utils/riwayat-model.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,11 +14,23 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    navigateToMainScreen();
+  }
 
-    Future.delayed(Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => MainScreen()));
-    });
+  Future<void> navigateToMainScreen() async {
+    await Future.delayed(Duration(seconds: 4));
+    await openHiveIfNeeded(); // membuka box jika diperlukan
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => MainScreen()),
+    );
+  }
+
+  Future<void> openHiveIfNeeded() async {
+    if (!Hive.isBoxOpen('riwayatBox')) {
+      await Hive.openBox<RiwayatModel>('riwayatBox');
+    }
   }
 
   @override

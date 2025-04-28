@@ -4,8 +4,15 @@ import 'package:AgriIn/screen/edukasi.dart';
 import 'package:AgriIn/screen/riwayat.dart';
 import 'package:flutter/material.dart';
 import 'package:AgriIn/screen/splashscreen.dart';
+import 'package:AgriIn/utils/riwayat-model.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(RiwayatModelAdapter());
+  await Hive.openBox<RiwayatModel>('riwayatBox');
+
   runApp(MyApp());
   // runApp(DevicePreview(builder: (context) => MyApp()));
 }
