@@ -1,0 +1,2 @@
+D:/agil/1. Kuliah/1. Tugas Semester/Semester 8/AGRICure/android/app/.cxx/Debug/2h2x2d43/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/agil/1. Kuliah/1. Tugas Semester/Semester 8/AGRICure/android/app/.cxx/Debug/2h2x2d43/armeabi-v7a/CMakeFiles/rebuild_cache.dir
