@@ -53,32 +53,46 @@ class _HasilScreenState extends State<HasilScreen> {
     if (prediction != null && prediction.isNotEmpty) {
       setState(() {
         _hasilPred = prediction.map<Map<String, dynamic>>((pred) {
-          int index = pred['index']; // Ambil index penyakit dari model
-          double confidence = pred['confidence']; // Confidence dari model
+          int index = pred['index']; // index penyakit dari model
+          double confidence = pred['confidence']; // nilai MB dari YOLO
+
+          // Hitung MD
+          double md = 1 - confidence;
+
+          // Hitung CF dasar (tanpa bobot pakar): CF = MB - MD = 2*MB - 1
+          double cfDasar = (2 * confidence - 1).clamp(0.0, 1.0);
+
+          // Ambil CF pakar dari data (hindari error jika index out of bounds)
           double cfPakar = (index < dt.cfValues.length)
               ? dt.cfValues[index]
-              : 0.5; // Hindari error jika index di luar batas
+              : 1.0;
 
-          double cfGabungan = confidence * cfPakar; // Perhitungan CF gabungan
+          // Hitung CF gabungan: CF AI * CF Pakar
+          double cfGabungan = (cfDasar * cfPakar).clamp(0.0, 1.0);
 
           return {
-            ...pred, // Salin semua data asli
-            'cfGabungan': cfGabungan, // Tambahkan nilai CF gabungan
+            ...pred,
+            'cfDasar': cfDasar,
+            'cfPakar': cfPakar,
+            'cfGabungan': cfGabungan,
           };
         }).toList();
 
+        // Simpan hasil tertinggi ke Hive (opsional)
         final topPred = _hasilPred![0];
         final box = Hive.box<RiwayatModel>('riwayatBox');
-        box.add(RiwayatModel(imagePath: widget.file!.path,
-            label: topPred['label'],
-            confidence: topPred['confidence'],
-            cfGabungan: topPred['cfGabungan'],
-            tanggal: DateTime.now()));
+        box.add(RiwayatModel(
+          imagePath: widget.file!.path,
+          label: topPred['label'],
+          confidence: topPred['confidence'],
+          cfGabungan: topPred['cfGabungan'],
+          tanggal: DateTime.now(),
+        ));
       });
     }
   }
 
-  @override
+    @override
   void dispose() {
     Tflite.close();
     super.dispose();
