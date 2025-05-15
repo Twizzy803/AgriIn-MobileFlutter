@@ -84,7 +84,7 @@ class _RiwayatScreenState extends State<RiwayatScreen> {
                                             color: Color(0xff16423C)),
                                       ),
                                       Text(
-                                        "Persentase: ${(riwayat.cfGabungan * 100).toStringAsFixed(2)}%",
+                                        "Kerusakan: ${(riwayat.cfGabungan * 100).toStringAsFixed(2)}%",
                                         style: TextStyle(
                                             fontFamily: 'Poppins',
                                             fontWeight: FontWeight.bold,

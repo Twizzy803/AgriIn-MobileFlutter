@@ -296,7 +296,8 @@ class _HasilScreenState extends State<HasilScreen> {
                                             horizontal: screenWidth * 0.025,
                                             vertical: screenHeight * 0.015),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               "Rekomendasi Perawatan: ",
