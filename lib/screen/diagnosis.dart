@@ -73,29 +73,31 @@ class _DiagnosisScreenState extends State<DiagnosisScreen> {
                 ),
                 child: Column(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: screenWidth * 0.08, top: screenHeight * 0.04),
-                      child: Row(
-                        children: [
+                    SizedBox(
+                      height: screenHeight * 0.04,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(children: [
                           Text(
-                            "Gunakan Dengan",
+                            "Memajukan Pertanian",
                             style: TextStyle(
-                                color: Color(0xff16423C),
+                                color: Color(0xffC1F2B0),
                                 fontFamily: "Poppins",
                                 fontSize: screenWidth * 0.06,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            " Bijak",
+                            "Lewat Bawang Merah",
                             style: TextStyle(
-                                color: Colors.white,
+                                color: Color(0xffC1F2B0),
                                 fontFamily: "Poppins",
                                 fontSize: screenWidth * 0.06,
                                 fontWeight: FontWeight.bold),
                           ),
-                        ],
-                      ),
+                        ])
+                      ],
                     ),
                     SizedBox(
                       height: screenHeight * 0.06,
