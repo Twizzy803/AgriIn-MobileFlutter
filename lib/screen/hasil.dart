@@ -222,7 +222,7 @@ class _HasilScreenState extends State<HasilScreen> {
                                                   //   style: TextStyle(fontSize: 18),
                                                   // ),
                                                   Text(
-                                                    "Persentase Kerusakan: ${((_hasilPred != null && _hasilPred!.isNotEmpty) ? (_hasilPred![0]['cfGabungan'] * 100).toStringAsFixed(2) : '0')}%",
+                                                    "Tingkat Kerusakan: ${((_hasilPred != null && _hasilPred!.isNotEmpty) ? (_hasilPred![0]['cfGabungan'] * 100).toStringAsFixed(2) : '0')}%",
                                                     style: TextStyle(
                                                         fontSize:
                                                             screenWidth * 0.035,
