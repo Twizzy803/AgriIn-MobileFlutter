@@ -300,7 +300,7 @@ class _HasilScreenState extends State<HasilScreen> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              "Rekomendasi Perawatan: ",
+                                              "Penanganan: ",
                                               style: TextStyle(
                                                   fontSize: screenWidth * 0.035,
                                                   fontFamily: 'Poppins',
