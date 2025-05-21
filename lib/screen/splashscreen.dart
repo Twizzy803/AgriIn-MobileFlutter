@@ -35,6 +35,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //Mengambil ukuran layar
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
         backgroundColor: Color(0xff65B741),
         appBar: AppBar(
@@ -44,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontFamily: "Poppins",
-                      fontSize: 24,
+                      fontSize: screenWidth * 0.06,
                       color: Color(0xffFFE3E3)),
                   children: <TextSpan>[
                 TextSpan(
@@ -52,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontFamily: "Poppins",
-                        fontSize: 24,
+                        fontSize: screenWidth * 0.06,
                         color: Color(0xFF16423C)))
               ])),
           foregroundColor: Color(0xffFFE3E3),
@@ -66,8 +70,8 @@ class _SplashScreenState extends State<SplashScreen> {
             Center(
               child: Image.asset(
                 'assets/image/logosplash.png',
-                width: 650,
-                height: 650,
+                width: screenWidth * 0.6,
+                height: screenHeight * 0.8,
               ),
             ),
             Spacer(),
@@ -77,7 +81,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   fontFamily: "Poppins",
                   color: Color(0xffFFE3E3),
                   fontWeight: FontWeight.bold,
-                  fontSize: 15),
+                  fontSize: screenWidth * 0.035),
             ),
             SizedBox(height: 5),
             Text(
@@ -86,9 +90,9 @@ class _SplashScreenState extends State<SplashScreen> {
                   fontFamily: "Poppins",
                   color: Color(0xff16423C),
                   fontWeight: FontWeight.bold,
-                  fontSize: 15),
+                  fontSize: screenWidth * 0.035),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: screenHeight * 0.03),
           ],
         ));
   }

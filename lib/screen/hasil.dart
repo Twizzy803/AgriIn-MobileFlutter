@@ -56,9 +56,6 @@ class _HasilScreenState extends State<HasilScreen> {
           int index = pred['index']; // index penyakit dari model
           double confidence = pred['confidence']; // nilai MB dari YOLO
 
-          // Hitung MD
-          double md = 1 - confidence;
-
           // Hitung CF dasar (tanpa bobot pakar): CF = MB - MD = 2*MB - 1
           double cfDasar = (2 * confidence - 1).clamp(0.0, 1.0);
 

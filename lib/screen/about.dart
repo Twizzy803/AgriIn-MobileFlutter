@@ -6,18 +6,13 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Mengambil ukuran layar
-    final screenWidth = MediaQuery
-        .of(context)
-        .size
-        .width;
-    final screenHeight = MediaQuery
-        .of(context)
-        .size
-        .height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Color(0xffC1F2B0),
-        body: Column(children: [
+        backgroundColor: Color(0xffC1F2B0),
+        body: SingleChildScrollView(
+            child: Column(children: [
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: screenWidth * 0.05, vertical: screenHeight * 0.01),
@@ -34,21 +29,21 @@ class AboutScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.01),
                 Text(
                   "AgriIn merupakan aplikasi pintar yang dirancang untuk membantu petani muda dan petani pemula dalam membudidayakan tanaman bawang merah secara modern. Aplikasi ini memanfaatkan teknologi AI berbasis kamera untuk mendeteksi penyakit atau hama yang menyerang tanaman bawang merah, terutama yang terlihat pada bagian daun.",
                   style: TextStyle(
                       fontSize: screenWidth * 0.035, fontFamily: "Poppins"),
                   textAlign: TextAlign.justify,
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: screenHeight * 0.01),
                 Text(
                   "Dengan hanya mengambil foto tanaman, AgriIn akan:",
                   style: TextStyle(
                       fontSize: screenWidth * 0.035, fontFamily: "Poppins"),
                   textAlign: TextAlign.justify,
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.01),
                 // Bullet list
                 Text(
                   "Mendeteksi gejala penyakit atau hama berdasarkan ciri fisik pada daun",
@@ -76,14 +71,14 @@ class AboutScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 15),
                 Text(
-                    "AgriIn hadir sebagai langkah awal menuju pertanian yang cerdas, mudah, dan ramah pemula, khususnya dalam membudidayakan bawang merah yang sehat dan berkualitas.",
-                    style: TextStyle(
-                        fontSize: screenWidth * 0.035, fontFamily: "Poppins"),
-                    textAlign: TextAlign.justify,
+                  "AgriIn hadir sebagai langkah awal menuju pertanian yang cerdas, mudah, dan ramah pemula, khususnya dalam membudidayakan bawang merah yang sehat dan berkualitas.",
+                  style: TextStyle(
+                      fontSize: screenWidth * 0.035, fontFamily: "Poppins"),
+                  textAlign: TextAlign.justify,
                 ),
               ],
             ),
           )
-        ]));
+        ])));
   }
 }
