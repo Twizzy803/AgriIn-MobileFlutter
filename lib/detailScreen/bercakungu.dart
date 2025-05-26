@@ -103,7 +103,7 @@ class bercakunguScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           )
                         ]))),
-            // bagian penanganan
+            // bagian penyebab
             SizedBox(
               height: screenHeight * 0.02,
             ),
@@ -119,7 +119,7 @@ class bercakunguScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Penanganan :",
+                            "Penyebab :",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.bold,
@@ -127,7 +127,7 @@ class bercakunguScreen extends StatelessWidget {
                                 color: Colors.white),
                           ),
                           Text(
-                            "1. Gunakan fungisida (pestisida yang digunakan untuk membunuh atau menghambat pertumbuhan jamur dan sporanya) berbasis mancozeb.",
+                            "1. Jamur Alternaria porri menginfeksi daun dan memicu munculnya bercak ungu yang meluas, dikelilingi oleh tepian berwarna kuning.",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,
@@ -135,7 +135,7 @@ class bercakunguScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           ),
                           Text(
-                            "2. Lakukan rotasi tanaman. Lakukan rotasi tanaman. Jangan menanam bawang merah terus-menerus di lahan yang sama. Ganti dengan tanaman non-inang seperti jagung, kacang tanah, atau padi.",
+                            "2. Perbedaan suhu drastis antara malam (dingin/lembap) dan siang (panas), mempercepat pertumbuhan jamur.",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,
@@ -143,7 +143,55 @@ class bercakunguScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           ),
                           Text(
-                            "3. Pastikan drainase lahan baik. Tanah yang becek dan tergenang air memicu kelembaban tinggi, yang sangat disukai jamur untuk berkembang.",
+                            "3. Tanaman yang ditanam terlalu rapat menghambat aliran udara, sehingga meningkatkan kelembapan dan menyebabkan daun-daun tua cepat mengering.",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify,
+                          )
+                        ]))),
+            // bagian perawatan
+            SizedBox(
+              height: screenHeight * 0.02,
+            ),
+            Container(
+                decoration: BoxDecoration(
+                    color: Color(0xff65B741),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: screenWidth * 0.025,
+                        vertical: screenHeight * 0.015),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Perawatan :",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Colors.white),
+                          ),
+                          Text(
+                            "1. Semprot Klorotalonil 500 SC atau Mankozeb 80 WP dengan dosis 2 gram per 1 liter air, seminggu sekali saat gejala awal muncul.",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify,
+                          ),
+                          Text(
+                            "2. Atur jarak tanam minimal 10–15 cm agar sirkulasi udara lancar dan daun cepat kering setelah hujan/siram.",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify,
+                          ),
+                          Text(
+                            "3. Penyiraman sebaiknya dilakukan pagi hari untuk memastikan daun kering sebelum malam tiba. penyiraman sore hari sebaiknya dihindari.",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,

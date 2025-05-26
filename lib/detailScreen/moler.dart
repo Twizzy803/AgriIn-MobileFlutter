@@ -103,7 +103,7 @@ class molerScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           )
                         ]))),
-            // bagian penanganan
+            // bagian penyebab
             SizedBox(
               height: screenHeight * 0.02,
             ),
@@ -119,7 +119,7 @@ class molerScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Penanganan :",
+                            "Penyebab :",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.bold,
@@ -127,7 +127,7 @@ class molerScreen extends StatelessWidget {
                                 color: Colors.white),
                           ),
                           Text(
-                            "1. Gunakan fungisida sistemik berbasis benomil. Benomil adalah fungisida sistemik yang bekerja dari dalam tanaman. Ia menyebar melalui jaringan dan menghambat pertumbuhan jamur penyebab moler.",
+                            "1. Jamur tanah Fusarium oxysporum menyerang dari akar dan mengakibatkan tanaman menjadi layu dan umbinya membusuk.",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,
@@ -135,7 +135,7 @@ class molerScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           ),
                           Text(
-                            "2. Perbaiki drainase lahan agar tidak tergenang air. Genangan air mempercepat perkembangan jamur di tanah dan memperburuk serangan moler.",
+                            "2. Kondisi tanah yang tergenang atau memiliki drainase yang tidak baik dapat mempercepat penyebaran spora jamur.",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,
@@ -143,7 +143,55 @@ class molerScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           ),
                           Text(
-                            "3. Lakukan pergiliran tanaman. Jangan menanam bawang merah terus-menerus di lahan yang sama. Ganti dengan tanaman yang tidak rentan terhadap Fusarium (seperti jagung, padi, atau kacang tanah).",
+                            "3. Penggunaan benih yang rentan atau sudah terkontaminasi memperbesar kemungkinan terjadinya infeksi pada tahap awal pertumbuhan.",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify,
+                          )
+                        ]))),
+            // bagian perawatan
+            SizedBox(
+              height: screenHeight * 0.02,
+            ),
+            Container(
+                decoration: BoxDecoration(
+                    color: Color(0xff65B741),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: screenWidth * 0.025,
+                        vertical: screenHeight * 0.015),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Perawatan :",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Colors.white),
+                          ),
+                          Text(
+                            "1. Siram pangkal tanaman dengan Karbendazim 50 WP, dosis 1 gram per liter air, ulangi 7 hari sekali.",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify,
+                          ),
+                          Text(
+                            "2. Pembuatan bedengan setinggi 20–30 cm dengan drainase yang baik dapat membantu menghindari genangan air di lahan.",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify,
+                          ),
+                          Text(
+                            "3. Lakukan rotasi tanaman dengan non-bawang (jagung, bayam, atau kacang-kacangan) selama 1 musim untuk menekan populasi jamur tanah.",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,

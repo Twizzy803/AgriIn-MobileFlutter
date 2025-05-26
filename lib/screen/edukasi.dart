@@ -1,5 +1,5 @@
 import 'package:AgriIn/detailScreen/bercakungu.dart';
-import 'package:AgriIn/detailScreen/hawar.dart';
+import 'package:AgriIn/detailScreen/antraknosa.dart';
 import 'package:AgriIn/detailScreen/lalat.dart';
 import 'package:AgriIn/detailScreen/moler.dart';
 import 'package:flutter/material.dart';
@@ -89,7 +89,7 @@ class EdukasiScreen extends StatelessWidget {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(5),
                                 child: Image.asset(
-                                  "assets/image/edu_hawar.jpg",
+                                  "assets/image/edu_antraknosa.jpg",
                                   fit: BoxFit.cover,
                                 ),
                               )),
@@ -97,7 +97,7 @@ class EdukasiScreen extends StatelessWidget {
                             height: screenHeight * 0.01,
                           ),
                           Text(
-                            "Hawar",
+                            "Antraknosa",
                             style: TextStyle(
                                 fontSize: screenWidth * 0.04,
                                 fontFamily: 'Poppins',

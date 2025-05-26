@@ -103,7 +103,7 @@ class lalatScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           ),
                           Text(
-                            "4. Terdapat ulat berwarna hijau, abu-abu, atau coklat dan bersembunyi di pangkal daun",
+                            "4. Terdapat lubang pada daun",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,
@@ -111,7 +111,7 @@ class lalatScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           ),
                           Text(
-                            "5. Terdapat lubang pada daun",
+                            "5. Terdapat kotoran ulat yang berbentuk butiran kecil berwarna hitam atau coklat gelap.",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,
@@ -119,7 +119,7 @@ class lalatScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           ),
                           Text(
-                            "6. Terdapat kotoran ulat yang berbentuk butiran kecil berwarna hitam atau coklat gelap.",
+                            "6. Terdapat ulat berwarna hijau, abu-abu, atau coklat dan bersembunyi di pangkal daun",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,
@@ -127,7 +127,7 @@ class lalatScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           )
                         ]))),
-            // bagian penanganan
+            // bagian penyebab
             SizedBox(
               height: screenHeight * 0.02,
             ),
@@ -143,7 +143,7 @@ class lalatScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Penanganan :",
+                            "Penyebab :",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.bold,
@@ -151,7 +151,7 @@ class lalatScreen extends StatelessWidget {
                                 color: Colors.white),
                           ),
                           Text(
-                            "1. Gunakan insektisida biologis berbasis neem oil. Neem oil (minyak mimba) mengandung azadirachtin, senyawa alami yang bersifat, mengusir (repelen) serangga",
+                            "1. Hama berkembang pesat dalam lingkungan dengan kelembapan tinggi dan suhu yang hangat.",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,
@@ -159,7 +159,7 @@ class lalatScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           ),
                           Text(
-                            "2. Lakukan pemangkasan daun yang terserang.Daun yang rusak oleh lalat atau ulat bisa menjadi sumber penyebaran.",
+                            "2. Penggunaan pestisida yang tidak tepat sehingga membunuh musuh alami dan menyebabkan ledakan populasi hama.",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,
@@ -167,7 +167,55 @@ class lalatScreen extends StatelessWidget {
                             textAlign: TextAlign.justify,
                           ),
                           Text(
-                            "3. Pasang perangkap kuning untuk lalat. Lalat sangat tertarik pada warna kuning terang.",
+                            "3. Lingkungan terlalu lembap dan banyak gulma, menciptakan tempat persembunyian dan bertelur bagi hama.",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify,
+                          )
+                        ]))),
+            // bagian perawatan
+            SizedBox(
+              height: screenHeight * 0.02,
+            ),
+            Container(
+                decoration: BoxDecoration(
+                    color: Color(0xff65B741),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: screenWidth * 0.025,
+                        vertical: screenHeight * 0.015),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Perawatan :",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Colors.white),
+                          ),
+                          Text(
+                            "1. Gunakan Abamektin 18 EC (insektisida sistemik), campurkan 1 ml per 2 liter air, semprot setiap 3–5 hari saat populasi tinggi.",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify,
+                          ),
+                          Text(
+                            "2. Pasang perangkap feromon untuk ulat dan yellow sticky trap untuk lalat.",
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify,
+                          ),
+                          Text(
+                            "3. Membersihkan gulma dan daun yang telah mati secara rutin dapat membantu memutus rantai hidup hama",
                             style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 14,

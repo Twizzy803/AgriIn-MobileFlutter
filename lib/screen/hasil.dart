@@ -297,7 +297,7 @@ class _HasilScreenState extends State<HasilScreen> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              "Penanganan: ",
+                                              "Perawatan: ",
                                               style: TextStyle(
                                                   fontSize: screenWidth * 0.035,
                                                   fontFamily: 'Poppins',
