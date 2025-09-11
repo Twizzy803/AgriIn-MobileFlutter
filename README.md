@@ -1,4 +1,4 @@
-## Aplikasi Diagnosis Penyakit dan Hama pada Tanaman Bawang Merah
+## AgriIn-MobileFlutter
 
 Ini adalah aplikasi Android yang dikembangkan menggunakan framework Flutter untuk membantu petani bawang merah dalam mendiagnosis penyakit dan hama yang menyerang tanaman mereka. Aplikasi ini menyediakan fitur-fitur berikut:
 
