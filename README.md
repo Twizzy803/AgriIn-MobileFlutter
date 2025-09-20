@@ -7,5 +7,5 @@ Ini adalah aplikasi Android yang dikembangkan menggunakan framework Flutter untu
 - Panduan Pemeliharaan: Menyediakan tips dan panduan pemeliharaan tanaman bawang merah untuk mencegah serangan penyakit dan hama di masa depan.
 - User-Friendly Interface: Antarmuka yang ramah pengguna dan mudah digunakan, memanfaatkan keunggulan framework Flutter.
 
-Aplikasi ini diharapkan dapat menjadi solusi praktis bagi para petani bawang merah dalam meningkatkan produktivitas dan kualitas tanaman mereka.
+Aplikasi ini diharapkan dapat menjadi solusi praktis bagi para petani bawang merah dalam meningkatkan produktivitas dan kualitas tanaman mereka. <br>
 <img src="https://github.com/user-attachments/assets/1cc5877b-7dd9-4f4d-832b-1be769c47b51" alt="" />
